@@ -11,9 +11,15 @@
 }
 
 .screen {
+   align-items: flex-end;
    background-color: #1a252c;
    border-radius: 16px 16px 0 0;
+   display: flex;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-size: 36px;
    height: 300px;
+   justify-content: flex-end;
+   padding: 24px;
 }
 
 .button-container {
