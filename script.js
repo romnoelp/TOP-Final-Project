@@ -8,15 +8,16 @@ const numericalButtons = Array.from(buttons).filter(
 );
 let firstAddend = 0;
 let secondAdded = 0;
+let newValue = "";
 
 // On click event for the numerical buttons.
 numericalButtons.forEach((element) => {
    element.addEventListener("click", () => {
       let firstValue = document.createElement("p");
       firstValue.style.color = "#edf1f4";
-      firstValue.textContent = element.innerText;
-      console.log(firstValue);
-
-      calculatorScreen.appendChild(firstValue);
+      newValue += element.innerText;
+      firstValue.textContent = newValue;
+      firstAddend = Number(newValue);
+      
    });
 });
