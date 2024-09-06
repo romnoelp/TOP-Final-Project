@@ -1,20 +1,15 @@
-// Button declarations.
 const buttons = document.querySelectorAll("button");
 const calculatorScreen = document.querySelector(".screen");
 
-// Value initializations.
 let firstAddend = 0;
 let newValue = "";
+let existingPElement = null;
 
 // Selects all the buttons that don't have the span tag inside.
 const numericalButtons = Array.from(buttons).filter(
    (button) => !button.querySelector("span")
 );
 
-// Reference to the existing <p> element on the screen.
-let existingPElement = null;
-
-// On click event for the numerical buttons.
 numericalButtons.forEach((element) => {
    element.addEventListener("click", () => {
       if (!existingPElement) {
@@ -24,7 +19,6 @@ numericalButtons.forEach((element) => {
          calculatorScreen.appendChild(existingPElement);
       }
 
-      // Update the content of the existing <p> element.
       newValue += element.innerText;
       existingPElement.textContent = newValue;
       firstAddend = Number(newValue);
